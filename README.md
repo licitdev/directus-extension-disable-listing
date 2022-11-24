@@ -1,6 +1,6 @@
 # Directus Extension - Disable Listing
 
-Disable listing of collections for public users. Listings for users with app access to the data studio and admins are
+Disable listing of collections for public users. Listings for admins and users with app access to the Data Studio are
 always allowed.
 
 [![NPM version][npm-version-image]][npm-url] [![License][license-image]][license-url]
