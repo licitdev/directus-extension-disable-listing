@@ -1,0 +1,48 @@
+{
+	"name": "directus-extension-disable-listing",
+	"version": "0.0.0",
+	"keywords": [
+		"directus",
+		"directus-extension",
+		"directus-custom-hook",
+		"disable-listing",
+		"security"
+	],
+	"directus:extension": {
+		"type": "hook",
+		"path": "dist/index.js",
+		"source": "src/index.ts",
+		"host": "^9.20.4"
+	},
+	"scripts": {
+		"build": "directus-extension build",
+		"dev": "directus-extension build -w --no-minify",
+		"format": "prettier --write \"src/**/*.ts\"",
+		"prepare": "npm run build",
+		"version": "npm run format && git add -A src",
+		"postversion": "git push && git push --tags"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/licitdev/directus-extension-disable-listing.git"
+	},
+	"bugs": {
+		"url": "https://github.com/licitdev/directus-extension-disable-listing/issues"
+	},
+	"author": {
+		"name": "ian",
+		"email": "licitdev@gmail.com"
+	},
+	"license": "GPL-3.0",
+	"devDependencies": {
+		"@directus/extensions-sdk": "9.20.4",
+		"@types/express": "^4.17.14",
+		"@types/node": "^18.7.16",
+		"express": "^4.18.2",
+		"prettier": "^2.7.1",
+		"typescript": "^4.8.3"
+	},
+	"files": [
+		"dist/**/*"
+	]
+}
