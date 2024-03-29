@@ -1,7 +1,10 @@
+import { createError } from '@directus/errors';
 import { defineHook } from '@directus/extensions-sdk';
-import { RequestHandler } from 'express';
+import type { RequestHandler } from 'express';
 
-export default defineHook(({ init }, { exceptions }) => {
+const ForbiddenError = createError('FORBIDDEN', "You don't have permission to access this.", 403);
+
+export default defineHook(({ init }) => {
 	const bypassCollections: string[] = [];
 
 	const bypassRoutes = process.env.EXT_DISABLE_LISTING_BYPASS_ROUTES
@@ -65,7 +68,7 @@ export default defineHook(({ init }, { exceptions }) => {
 						return currentHandle(req, res, next);
 					}
 
-					return next(new exceptions.ForbiddenException());
+					return next(new ForbiddenError());
 				};
 
 				childRoute.handle = newHandle;

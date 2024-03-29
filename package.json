@@ -1,6 +1,7 @@
 {
 	"name": "directus-extension-disable-listing",
-	"version": "0.0.1",
+	"description": "Disable listing of collections for public users.",
+	"version": "0.1.0",
 	"keywords": [
 		"directus",
 		"directus-extension",
@@ -12,11 +13,12 @@
 		"type": "hook",
 		"path": "dist/index.js",
 		"source": "src/index.ts",
-		"host": "^9.20.4"
+		"host": "^10.10.0"
 	},
 	"scripts": {
 		"build": "directus-extension build",
 		"dev": "directus-extension build -w --no-minify",
+		"link": "directus-extension link",
 		"format": "prettier --write \"src/**/*.ts\"",
 		"prepare": "npm run build",
 		"version": "npm run format && git add -A src",
@@ -44,5 +46,8 @@
 	},
 	"files": [
 		"dist/**/*"
-	]
+	],
+	"dependencies": {
+		"@directus/errors": "^0.2.4"
+	}
 }
