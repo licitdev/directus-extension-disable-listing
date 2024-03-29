@@ -1,6 +1,6 @@
 import { createError } from '@directus/errors';
 import { defineHook } from '@directus/extensions-sdk';
-import { RequestHandler } from 'express';
+import type { RequestHandler } from 'express';
 
 const ForbiddenError = createError('FORBIDDEN', "You don't have permission to access this.", 403);
 
