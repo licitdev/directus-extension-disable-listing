@@ -1,8 +1,6 @@
-import { createError } from '@directus/errors';
+import { ForbiddenError } from '@directus/errors';
 import { defineHook } from '@directus/extensions-sdk';
 import type { RequestHandler } from 'express';
-
-const ForbiddenError = createError('FORBIDDEN', "You don't have permission to access this.", 403);
 
 export default defineHook(({ init }) => {
 	const bypassCollections: string[] = [];
